@@ -1,0 +1,25 @@
+<title>{$title}</title>
+{template "content", "header"}
+<div class="tl">
+	<div class="c tl-c">{$title}</div>
+</div>
+
+<div class="c v">
+	<div class="l v-l">
+		<div class="v-lc v-pos">
+			<span>您目前处于：</span>
+			<a href="{APP_PATH}">首页</a>
+			<span> > </span>
+			<b>{$title}</b>
+		</div>
+		<div class="v-lc v-news">
+			{if $thumb}<img src="{$thumb}" />{/if}
+			<p>{$content}
+		</div>
+	</div>
+	{template "content", "right"}
+	<div class="b"></div>
+</div>
+
+
+{template "content", "footer"}

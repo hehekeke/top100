@@ -1,0 +1,88 @@
+{template "content", "header"}
+
+<div class="bn banner-publication">
+<!-- 	<div class="bn-c">
+		<h1>我们是*** ***改变者</h1>
+		<p>助推全球社会变革</p>
+	</div> -->
+</div>
+
+<div class="c pub">
+	<div class="l pub-l">
+		<a href="javascript:;">
+			<span></span>
+			<p>案例研究报告</p>
+		</a>
+		<a href="javascript:;">
+			<span></span>
+			<p>演讲者图书推荐</p>
+		</a>
+		<a href="javascript:;">
+			<span></span>
+			<p>纪念品</p>
+		</a>
+	</div>
+	<div class="r pub-r">
+		<div class="pub-rc">
+			<div class="pub-rtl">案例研究报告</div>
+			<div class="pub-rb">
+				<div class="pub-rv">
+				{pc:content action="lists" catid="31"}
+					{loop $data $v}
+						<a href="{$v[url]}" class="l pub-rk">
+							<table cellspacing="0" cellpadding="0"><td><img width="130" height="156" src="{$v[thumb]}"  /></td></table>
+							<h1>{mb_substr($v[title],0,16, 'utf-8')}</h1>
+							<p>{str_cut(strip_tags(trim($v[content])), 130)}</p>
+							<span class="l">{$v[price]}&nbsp;</span>
+							<img src="{$imgPath}ar.jpg" class="r" />
+							<div class="b"></div>
+						</a>					
+					{/loop}
+				{/pc}
+				</div>
+			</div>
+		</div>
+		<div class="pub-rc">
+			<div class="pub-rtl">演讲者图书推荐</div>
+			<div class="pub-rb">
+				<div class="pub-rv">
+				{pc:content action="lists" catid="32" moreinfo="1"}
+					{loop $data $v}
+						<a href="{$v[url]}" class="l pub-rk">
+							<table cellspacing="0" cellpadding="0"><td><img width="130" height="156" src="{$v[thumb]}"  /></td></table>
+							<h1>{mb_substr($v[title],0,16, 'utf-8')}</h1>
+							<p>{str_cut(strip_tags(trim($v[content])), 130)}</p>
+							<span class="l">{$v[price]}&nbsp;</span>
+							<img src="{$imgPath}ar.jpg" class="r" />
+							<div class="b"></div>
+						</a>					
+					{/loop}
+				{/pc}
+				</div>
+			</div>
+		</div>
+		<div class="pub-rc">
+			<div class="pub-rtl">纪念品</div>
+			<div class="pub-rb">
+				<div class="pub-rv">
+				{pc:content action="lists" catid="33" moreinfo="1"}
+
+					{loop $data $v}
+						<a href="{$v[url]}" class="l pub-rk">
+							<table cellspacing="0" cellpadding="0"><td><img width="130" height="156" src="{$v[thumb]}"  /></td></table>
+							<h1>{mb_substr($v[title],0,16, 'utf-8')}</h1>
+							<p>{str_cut(strip_tags(trim($v[content])), 130)}</p>
+							<span class="l">{$v[price]}&nbsp;</span>
+							<img src="{$imgPath}ar.jpg" class="r" />
+							<div class="b"></div>
+						</a>					
+					{/loop}
+				{/pc}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b"></div>
+</div>
+
+{template "content", "footer"}

@@ -1,0 +1,113 @@
+{template "content", "header"}
+<!-- <link rel="stylesheet" type="text/css" href="{CSS_PATH}top100/video/video-js.min.css"> -->
+<div class="bn banner-summit2015" >
+<!-- 	<div class="bn-c">
+		<h1>案例提交</h1>
+		<p class="bn-cs">北京2015年4月10日</p>
+	</div> -->
+</div>
+
+<div class="c soft">
+	<h1>第四届TOP100全球软件案例研究峰会</h1>
+	<h2>暨Wiision走进中美标杆案例企业第九期</h2>
+	<p>2015年10月05——10月12日，TOP100SUMMIT联合Wiision技术管理学院举行为期8天的硅谷行，在硅谷举行全球软件案例研究峰会开幕式，邀请中国与美国科技界的领军企业共同揭秘这一年的最佳实践和对未来技术趋势的思考。</p>
+	<div class="soft-n">
+		<b>2500</b>
+		<img src="{$imgPath}soft-1.png" />
+		<span>参会者</span>
+	</div>
+	<div class="soft-n">
+		<b>100</b>
+		<img src="{$imgPath}soft-2.png" />
+		<span>案例解读</span>
+	</div>
+	<div class="soft-n">
+		<b>100</b>
+		<img src="{$imgPath}soft-3.png" />
+		<span>分享嘉宾</span>
+	</div>
+	<div class="soft-n">
+		<b>15</b>
+		<img src="{$imgPath}soft-4.png" />
+		<span>出品人</span>
+	</div>
+</div>
+
+<div class="case">
+		<div class="c case-c">
+			<h1>往届精选案例<span>10</span></h1>
+			{loop $historyCases['data'] $case}
+			<a href="{APP_PATH}index.php?m=api&c=think&a=show&cs={$case['courseid']}">
+				<table cellspacing="0" cellpadding="0">
+					<td>
+							<img src="<?php echo $this->getAttachUrl($case['thumbs'])?>" />
+							<p style="color: #f47937;">{$case[title]}</p>
+					</td>
+				</table>
+			</a>
+			{/loop}
+		</div>
+</div>
+<style type="text/css">
+	.box-bg{background: #000;}
+	.box{z-index: 9999;display: none;}
+	.review .box .box-tl{font-size: 18px;margin-bottom: 20px;}
+</style>
+<script type="text/javascript" src="{CSS_PATH}top100/ckplayer/ckplayer.js">
+</script>
+<div class="review">
+	<h1>往届精彩回顾</h1>
+	<div class="review-roll">
+		<ul style="width:100%;">
+		{pc:content action="lists" catid="21"}
+	<?php 
+	// $data = json_decode(' {"1":{"id":"1","catid":"21","typeid":"0","title":"\u6c6a\u5b9d\u4f20","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0705\/20150705110458712.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=1","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436107242","updatetime":"1436108701","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u6c6a\u5b9d\u4f20.mp4","description":""},"2":{"id":"2","catid":"21","typeid":"0","title":"\u5085\u5f3a","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0705\/20150705110419611.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=2","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436107642","updatetime":"1436108662","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u5085\u5f3a.mp4","description":""},"3":{"id":"3","catid":"21","typeid":"0","title":"\u6768\u9759","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0705\/20150705110209469.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=3","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436107861","updatetime":"1436108534","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u6768\u9759.mp4","description":""},"4":{"id":"4","catid":"21","typeid":"0","title":"\u674e\u4e9a\u7ef4","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0706\/20150706095749787.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=4","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436146571","updatetime":"1436147872","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u674e\u4e9a\u7ef4.mp4","description":""},"5":{"id":"5","catid":"21","typeid":"0","title":"\u738b\u5c0f\u5f6c","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0706\/20150706095341455.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=5","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436146961","updatetime":"1436147627","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u738b\u5c0f\u5f6c.mp4","description":""},"6":{"id":"6","catid":"21","typeid":"0","title":"\u8def\u5b81","style":"","thumb":"http:\/\/2015.top100summit.com\/uploadfile\/2015\/0706\/20150706095922438.png","keywords":"","posids":"0","url":"http:\/\/2015.top100summit.com\/index.php?m=content&c=index&a=show&catid=21&id=6","listorder":"0","status":"99","sysadd":"1","username":"admin","inputtime":"1436147883","updatetime":"1436147967","courseid":"","courseUrl":"","videoUrl":"http:\/\/7u2jzm.com2.z0.glb.qiniucdn.com\/\u8def\u5b81.mp4","description":""}}', true);
+	?>
+		{loop $data $video}
+			<div id="box10{$n}" class="box box10{$n} videoBox" video-src="{$video['videoUrl']}" style="width:800px;height:400px;">
+				<!-- <h1 class="box-tl">{$video[title]}</h1> -->
+			</div>
+			<li class="showVideo" onclick="showVideo(10{$n})">
+				<img  width="220" src="{$video['thumb']}" />
+				<!-- <span>我是预留的图标哈哈哈</span> -->
+  			</li>
+		{/loop}
+		</ul>
+	</div>
+	<a href="/index.php?m=content&c=index&a=lists&catid=11" class="review-btn">更多精彩回顾</a>
+</div>
+<div class="box-background"></div>
+{template "content", "footer"}
+<script src="{$js}marquee.js"></script>
+<script>
+$(function(){
+	// 往期回顾横向滚动
+  $(".review-roll").YlMarquee({
+        visible : Math.floor($(document).width()/220),
+        step:1,
+        width:$(document).width()
+    });
+
+  $(".videoBox").each(function(){
+	  	var videoSrc = $(this).attr("video-src");
+		var flashvars= {
+			f:videoSrc,
+			c:0,
+			b:1
+			};
+			var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always'};
+			CKobject.embedSWF('{CSS_PATH}top100/ckplayer/ckplayer.swf',$(this).attr("id"),'ckplayer_a1','800','400',flashvars,params);
+  })
+
+});
+</script>
+
+ <script>
+    	// videojs.options.flash.swf = "{CSS_PATH}top100/video/video-js.swf";
+    	function showVideo(n){
+    		box_show(n)
+			$(".box-background").css("height", $(document).height())
+			$(".box-background").show();
+    	}
+ </script>
+

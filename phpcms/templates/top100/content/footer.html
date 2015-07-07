@@ -1,0 +1,73 @@
+<div class="b"></div>
+<div class="f _pc">
+	<div class="c f-c">
+		<div class="l f-l">
+			<img src="{$imgPath}/f-lg.png" />
+			<p>© 2015 msup, Inc. | 政策声明</p>
+		</div>
+		<div class="r f-r1">
+			<img src="{$imgPath}/f-r.png" />
+			<br />
+			<img src="{$imgPath}/f-ewm1.png" class="f-ewm" />
+			<!-- <img src="{$imgPath}/f-ewm2.png" class="f-ewm" /> -->
+		</div>
+		<div class="r f-r2">
+			<p>大会组委会</p>
+			<p><span>咨询：</span><b>400-1818-020 郭艳慧</b></p>
+			<p><span></span><b>market@msup.com.cn</b></p>
+		</div>
+		<div class="r f-r3">
+			<a href="{APP_PATH}">首页</a>
+			<a href="<?= $cateUrl?>24">关于智库</a>
+			<a href="<?= APP_PATH.'index.php?m=api&c=caseSubmit';?>">案例提交</a>
+
+			<a href="<?= $cateUrl?>18">志愿者申请</a>
+		</div>
+		<div class="b"></div>
+	</div>
+</div>
+
+<div class="mf _m">
+	<div class="mf-c">
+		<div class="l mf-l">
+			<img src="{$imgPath}/f-lg.png" />
+			<img src="{$imgPath}/f-r.png" style="margin-top: 30px;" />
+		</div>
+		<div class="r mf-r">
+			<a href="{APP_PATH}">首页</a>
+			<a href="<?= $cateUrl?>24">关于协会</a>
+			<a href="<?= APP_PATH.'index.php?m=api&c=caseSubmit';?>">案例提交</a>
+			<a href="<?= $cateUrl?>18">志愿者申请</a>
+
+		</div>
+		<div class="b"></div>
+	</div>
+	<div class="mf-c">
+		<div class="l mf-l">
+			<!-- <img src="{$imgPath}/f-ewm1.png" /> -->
+			<img src="{$imgPath}/f-ewm2.png" style="margin-top: 20px;" />
+		</div>
+		<div class="r mf-r">
+			<p>大会组委会</p>
+			<p><span>咨询：</span><b>400-1818-020</b></p>
+			<p><span></span><b>market@msup.com.cn 郭艳慧</b></p>
+		</div>
+		<div class="b"></div>
+	</div>
+	<div class="mf-p">© 2015 msup, Inc. | 政策声明</div>
+</div>
+<script src="{$js}jquery.js"></script>
+<script src="{$js}common.js"></script>
+<script type="text/javascript" src="{$js}dataRequest.js"></script>
+<script src="http://s23.cnzz.com/stat.php?id=4686325&web_id=4686325" language="JavaScript"></script>
+<script type="text/javascript">
+	dataRequest('{APP_PATH}index.php?m=api&c=think&a=getCourseNum', '', function(data){
+		$(".countCourse").text(data[0].num);
+	});
+	dataRequest('{APP_PATH}index.php?m=api&c=think&a=getSalonNum', '', function(data){
+		$(".countSalon").text(data[0].num);
+	});
+	// dataRequest('{APP_PATH}inde.php?m=api&c=think&a=getSalonNum', '');
+
+	$("a[title='站长统计']").hide();
+</script>
