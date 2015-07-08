@@ -71,13 +71,14 @@ class think  extends api{
 		$params = $this->initParams();
 		$params['mw'] = ['mc_courseid' => $courseid];
 		$row = $this->curl->curl_action('api/index', $params);
+
 		extract($row['data'][0]);
 		// 右侧推荐案例
 		$position = $this->getPosition(['assignToTop100' => 1]);
 		$file = $this->getAttachUrl($file);
 		$speech = $this->getAttachUrl($speech);
 		include template("api", "showThink");
-	} 
+	}
 
 	// 按标签搜索课程
 	public function listCourses(){

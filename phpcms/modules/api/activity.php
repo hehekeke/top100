@@ -76,6 +76,7 @@ class activity  extends api {
 
 	 		}
 
+
 	 	}
 
 		$position =$position = $this->getPosition(['mc_assignToSalon' => 1]);

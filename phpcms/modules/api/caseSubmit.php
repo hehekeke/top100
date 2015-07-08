@@ -9,14 +9,16 @@ class caseSubmit  extends api{
 
     }
 
-    public function caseSubmit(){
+    public function init(){
+
         $userid =  param::get_cookie('_userid');
+
         if(empty($userid)){
-            header("Location: index.php?m=member&c=index&a=login&comeform=caseSubmit");
+
+            header("Location:/index.php?m=member&c=index&a=login&comeform=caseSubmit");
         }else{
             include template('api', 'caseSubmit');
         }
-
     }
 
     // 按标题搜索
@@ -38,14 +40,7 @@ class caseSubmit  extends api{
             echo $data;
         }
     }
-    public function init(){
-        $userid =  param::set_cookie('_userid');
-        if(empty($userid)){
-            Header("/index.php?m=api&c=user&a=login");
-        }else{
-            include template('api', 'caseSubmit');
-        }
-    }
+
     // 初始化查询参数
     public function initParams(){
         $params = [

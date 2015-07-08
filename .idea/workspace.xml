@@ -24,21 +24,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="caseSubmit_validate.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/statics/css/top100/js/caseSubmit_validate.js">
+      <file leaf-file-name="chinaz.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/statics/css/top100/js/chinaz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="17" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1691">
-              <folding>
-                <element signature="e#0#46#0" expanded="false" />
-              </folding>
+            <state line="16" column="48" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2204">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="caseSubmit.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/caseSubmit.html">
+      <file leaf-file-name="header.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="77" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.43716815" vertical-offset="2451" max-vertical-offset="4674">
+            <state line="33" column="18" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.49557522" vertical-offset="347" max-vertical-offset="1482">
               <folding />
             </state>
           </provider>
@@ -59,12 +57,24 @@
       <list>
         <option value="$PROJECT_DIR$/phpcms/modules/api/case.php" />
         <option value="$PROJECT_DIR$/caches/configs/database.php" />
-        <option value="$PROJECT_DIR$/phpcms/modules/api/caseSubmit.php" />
         <option value="$PROJECT_DIR$/phpcms/templates/top100/member/login.html" />
-        <option value="$PROJECT_DIR$/phpcms/modules/api/user.php" />
-        <option value="$PROJECT_DIR$/phpcms/templates/top100/content/header.html" />
         <option value="$PROJECT_DIR$/statics/css/top100/js/caseSubmit_validate.js" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/user.php" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/caseSubmit.php" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/content/myList_course.html" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/api/myList_course.html" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/myList_course.php" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/api/activity.html" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/activity.php" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/think.php" />
+        <option value="$PROJECT_DIR$/statics/css/top100/css/common.css" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/content/right_bottom.html" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/api/case_review.html" />
+        <option value="$PROJECT_DIR$/phpcms/modules/api/myCaseList.php" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/api/myCaseList.html" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/api/case_see.html" />
         <option value="$PROJECT_DIR$/phpcms/templates/top100/api/caseSubmit.html" />
+        <option value="$PROJECT_DIR$/phpcms/templates/top100/content/header.html" />
       </list>
     </option>
   </component>
@@ -107,6 +117,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -154,54 +165,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2015.top100summit.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="top100" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2015.top100summit.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="top100" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,9 +340,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2015.top100summit.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2015.top100summit.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caches" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -387,6 +389,20 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\statics\css\top100\js" />
+      <recent name="C:\wamp\www\statics\css\top100\css" />
+      <recent name="C:\wamp\www\statics\css\top100\img" />
+      <recent name="C:\wamp\www\phpcms\templates\top100\content" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\phpcms\templates\top100\api" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -434,15 +450,15 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="更改" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="更改" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -476,120 +492,313 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caches/configs/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="146" selection-end="146" vertical-scroll-proportion="0.2301038" vertical-offset="0" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/think.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="4085" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3059">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/summit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/member/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="84" selection-start="661" selection-end="661" vertical-scroll-proportion="0.83564013" vertical-offset="11" max-vertical-offset="1254">
-          <folding />
-        </state>
+        <state line="26" column="84" selection-start="661" selection-end="661" vertical-scroll-proportion="0.83564013" vertical-offset="11" max-vertical-offset="1254" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/member/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="74" selection-start="1951" selection-end="1985" vertical-scroll-proportion="-16.964285" vertical-offset="741" max-vertical-offset="1406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="67" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.63893807" vertical-offset="513" max-vertical-offset="2793">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/caseSubmit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="84" selection-start="423" selection-end="423" vertical-scroll-proportion="0.3615917" vertical-offset="57" max-vertical-offset="3173">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="1000" selection-end="1060" vertical-scroll-proportion="-4.571429" vertical-offset="138" max-vertical-offset="1387">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="64" column="74" selection-start="1951" selection-end="1985" vertical-scroll-proportion="-16.964285" vertical-offset="741" max-vertical-offset="1406" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/statics/css/top100/js/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/statics/css/top100/js/marquee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
-          <folding />
-        </state>
+        <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/statics/css/top100/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5111">
-          <folding>
-            <marker date="1436254649276" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5111" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/statics/css/top100/js/caseSubmit_validate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="17" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1691">
+        <state line="35" column="17" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1691" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/summit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="1223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="67" selection-start="1694" selection-end="1694" vertical-scroll-proportion="-12.892858" vertical-offset="513" max-vertical-offset="2793" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/listThink.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1197" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1482" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="301" selection-end="316" vertical-scroll-proportion="-1.6107266" vertical-offset="1140" max-vertical-offset="1976" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/caseSubmit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="50" selection-start="449" selection-end="489" vertical-scroll-proportion="0.53979236" vertical-offset="49" max-vertical-offset="3078" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/think.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1366782" vertical-offset="657" max-vertical-offset="1235" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/think-content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8737024" vertical-offset="505" max-vertical-offset="1311" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/myList_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="556" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/category_member_comany.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="29" selection-start="965" selection-end="965" vertical-scroll-proportion="-16.964285" vertical-offset="399" max-vertical-offset="2014" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/category_publication.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.285715" vertical-offset="456" max-vertical-offset="1786" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/category_volunteer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6141593" vertical-offset="347" max-vertical-offset="1425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/list_publication.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.392857" vertical-offset="627" max-vertical-offset="2432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/list_volunteer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="26" selection-start="533" selection-end="533" vertical-scroll-proportion="21.035715" vertical-offset="798" max-vertical-offset="1691" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/page_about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="30" vertical-scroll-proportion="7.642857" vertical-offset="214" max-vertical-offset="1007" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/page_chupinren.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="40.714287" vertical-offset="1140" max-vertical-offset="1748" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/page_huodong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="37" selection-start="780" selection-end="780" vertical-scroll-proportion="8.142858" vertical-offset="684" max-vertical-offset="2888" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/page_postulant.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="30.535715" vertical-offset="855" max-vertical-offset="1444" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/page_zhiku.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="32.392857" vertical-offset="907" max-vertical-offset="1463" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/show_news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="24" selection-end="54" vertical-scroll-proportion="0.5" vertical-offset="33" max-vertical-offset="589" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/summit2015.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.178572" vertical-offset="285" max-vertical-offset="2261" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/showActivity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1097345" vertical-offset="627" max-vertical-offset="2622" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="48" selection-start="928" selection-end="2743" vertical-scroll-proportion="0.8624535" vertical-offset="1151" max-vertical-offset="3952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/classes/api.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="20" selection-start="499" selection-end="499" vertical-scroll-proportion="0.75179857" vertical-offset="0" max-vertical-offset="817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/right.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="225" selection-end="229" vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="361" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/model/member_group_model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="854" column="44" selection-start="27719" selection-end="27726" vertical-scroll-proportion="0.3321234" vertical-offset="16043" max-vertical-offset="20938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caches/caches_member/caches_data/grouplist.cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.9723183" vertical-offset="1140" max-vertical-offset="3496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/model/log_model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/model/member_menu_model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="40" selection-start="289" selection-end="300" vertical-scroll-proportion="0.2301038" vertical-offset="0" max-vertical-offset="578" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/css/top100/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="31" selection-start="6807" selection-end="6807" vertical-scroll-proportion="0.54468805" vertical-offset="1862" max-vertical-offset="9177">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/right_bottom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="39" selection-start="158" selection-end="158" vertical-scroll-proportion="0.16435987" vertical-offset="0" max-vertical-offset="578" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/think.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="24" selection-start="1523" selection-end="1527" vertical-scroll-proportion="-2.7142856" vertical-offset="1140" max-vertical-offset="3078" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/shequhuodong-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="12" selection-start="419" selection-end="521" vertical-scroll-proportion="0.52595156" vertical-offset="0" max-vertical-offset="1520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/showThink.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="21" selection-start="0" selection-end="6176" vertical-scroll-proportion="-8.821428" vertical-offset="1653" max-vertical-offset="3914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/myList_course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="46" selection-start="199" selection-end="199" vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="361">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/case_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="0" selection-end="4833" vertical-scroll-proportion="1.8079585" vertical-offset="1577" max-vertical-offset="3078">
           <folding>
-            <element signature="e#0#46#0" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/case_see.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="58" selection-start="4674" selection-end="4674" vertical-scroll-proportion="-38.964287" vertical-offset="1664" max-vertical-offset="3040">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/modules/api/myCaseList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="43" selection-start="2991" selection-end="2991" vertical-scroll-proportion="-39.642857" vertical-offset="581" max-vertical-offset="1900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/myCaseList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="111" selection-start="1805" selection-end="1824" vertical-scroll-proportion="-25.107143" vertical-offset="0" max-vertical-offset="1767">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#a#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#a#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/api/caseSubmit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="77" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.43716815" vertical-offset="2451" max-vertical-offset="4674">
+        <state line="173" column="146" selection-start="5080" selection-end="5080" vertical-scroll-proportion="-10.857142" vertical-offset="2983" max-vertical-offset="4693">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#label#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#label#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/css/top100/css/chinaz.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/css/top100/js/chinaz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="48" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpcms/templates/top100/content/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="18" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.49557522" vertical-offset="347" max-vertical-offset="1482">
           <folding />
         </state>
       </provider>
