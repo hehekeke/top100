@@ -1,0 +1,75 @@
+
+{template "content", "header"}
+<script type="application/javascript">
+<?php if ($_GET['pages']) {
+?>
+	var page = {$_GET['pages']};
+<?php } else { ?>
+	var page = 1;
+<?php } ?>
+</script>
+<div class="bn" style=""></div>
+
+<div class="c v ls">
+	<div class="l v-l ls-l">
+		<div class="ls-ltl">
+			<a href="index.php?m=api&c=activity" class="<?php  if ($_GET['a'] == 'init' || !$_GET['a']): ?> a<?php endif;?>">最新活动沙龙</a>
+			<a href="index.php?m=api&c=activity&a=history" class="{if $_GET['a'] == 'history' } a{/if}">往届活动沙龙</a>
+		</div>
+		{if empty($schedulings)}
+		<img src="{$imgPath}activity_none.png" style="margin: 15px 0px;">
+		{/if}
+		{loop $schedulings $scheduling}
+			<div class="ls-lc">
+				<a href="/index.php?m=api&c=activity&a=show&id={$scheduling[id]}" target="_blank"><img src="{$scheduling[poster]}" class="l ls-lc-lg" /></a>
+				<div class="r ls-lcr">
+					<a href="/index.php?m=api&c=activity&a=show&id={$scheduling[id]}" target="_blank">
+						<h1 class="l">{$scheduling[title]}</h1>
+					</a>
+					<div class="r ls-lcrt">
+						<img src="{$imgPath}v-top2.png" />
+						<span>{collected_num($scheduling['created_at'], $scheduling[comments])}</span>
+						<img src="{$imgPath}v-top1.png" />
+						<span>{viewed_num($scheduling['created_at'],$scheduling[clicks])}</span>
+					</div>
+					<div class="b"></div>
+					<p>活动日期：{date("Y年m月d日", $scheduling[startTime])}  {$scheduling[address]}</p>
+					<!-- <p>剩余席位：{$scheduling[applicans]} / {$scheduling[celling]} (位)</p> -->
+				</div>
+				<div class="b"></div>
+				<p class="ls-lcp">{$scheduling[description]}</p>
+				<h2>演讲嘉宾</h2>
+				<div class="ls-lcb">
+					{loop $scheduling[lecturers]  $lecturer}
+						<p class="l">
+							{$lecturer[name]}
+							<span>{$lecturer[company]} {$lecturer[position]}</span>
+						</p>
+					{/loop}
+				</div>
+				<div class="b"></div>
+			</div>
+		{/loop}
+		<div class="b"></div>
+	{if $page}
+		<div class="pg">
+			<div class="pg-c">
+				<a href="javascript:;"></a>
+				<span>1</span>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+				<a href="javascript:;">4</a>
+				<a href="javascript:;">5</a>
+				<a href="javascript:;">></a>
+				<b>
+					<input value="1" /> / 25页
+				</b>
+			</div>
+		</div>
+	{/if}
+	</div>
+	{template "content", "right"}
+	<div class="b"></div>
+</div>
+
+{template "content", "footer"}

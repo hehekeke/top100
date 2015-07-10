@@ -1,0 +1,63 @@
+{template "content", "header"}
+<div class="bn" style="background-image: url({$imgPath}banner-zhiku.png);background-color:#1a1a1a"></div>
+			<?php 
+				$url = APP_PATH.'index.php?m=api&c=think&a=listCourses&t=';
+				$links = array();
+				$roles = array(
+					'2' => '我是产品经理',
+					'1' => '我是团队经理',
+					'3' => '我是架构师',
+					'5' => '我是开发经理',
+					'4' => '我是测试经理',
+					'11' => '我是工程师'
+					);
+				if ($_GET['t']) {
+					$links = array($_GET['t'] => $roles[$_GET['t']]);
+					unset($roles[$_GET['t']]);
+				}
+				$links +=$roles;
+			?>
+<div class="z-sch">
+	<div class="z-schc">
+		<span>选择类别：</span>
+		<div class="sl" name="job" id="roleTags">
+			<?php if (!$_GET['t']): ?>
+				<a href="<?php echo APP_PATH.'index.php?m=api&c=think&a=search';?>">全部</a>
+			<?php endif ?>
+			<?php foreach ($links as $key => $value) {
+				echo '<a href="'.$url.$key.'">'.$value."</a>";
+			} ?>
+			<?php if ($_GET['t']): ?>
+				<a href="<?php echo APP_PATH.'index.php?m=api&c=think&a=search';?>">全部</a>
+			<?php endif ?>			
+			<img src="http://2015.top100summit.com/statics/css/top100/img/ar.png" class="sl-ar">
+		</div>
+		<input type="hidden" name="job" value="0">
+	</div>
+	<div class="z-schc">
+		<form action="{APP_PATH}index.php?m=api&c=think&a=search" method="post">
+			<input name="keyword" class="z-schk" placeholder="关键词" />
+			<button  type="submit" class="searchbtn" style=""></button>
+		</form>
+	</div>
+	<div class="b"></div> 
+</div>
+<div class="zhiku-container">
+	<div class="c z-wt">
+		<div class="l z-wtn"></div>
+		<div class="l z-wtn"></div>
+		<div class="l z-wtn"></div>
+		<div class="l z-wtn"></div>
+		<div class="l z-wtn"></div>
+		<div class="b"></div>
+	</div>
+	{if empty(json_decode($data, true))}
+	<div id="loading-end" style="display: block;text-align: center">
+		<img src="http://2015.top100summit.com/statics/css/top100/img/end.png" style="height: 70px;">
+		<span></span>
+	</div>
+	{else}
+	<!-- <div id='loading'><img src='{$imgPath}loading.gif'><span>正在加载...</span></div> -->
+	{/if}
+</div>
+{template "content", "footer"}

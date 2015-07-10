@@ -5,25 +5,23 @@ class myCaseList  extends api {
         $this->curl = new curl();
     }
     public function init() {
-        if (!$_GET[cs]) {
-            showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
-        }
-        $courseid = $_GET['cs'];
-        $params = $this->initParams();
-        $params['mw'] = ['mc_courseid' => $courseid];
-        $row = $this->curl->curl_action('api/index', $params);
-        $courseLecturer =$row['data'];
-        extract($row['data'][0]);
+        $user_id = param::get_cookie('_userid');
+        // $user_id = '1';
+        $data['anlitijiao']['mcs_userid'] =  $user_id;
+            $data = [
+                'anlitijiao' => [
+                    'mcs_userid' =>$user_id
+                ]
+            ];
+         $return = $this->curl->curl_action('user-api/get-case-submit-list',$data);
+         $courseLecturer = $return['data'];
+        
         // 右侧推荐案例
-
-
-
         $position = $this->getPosition(['mc_assignToSalon' => 1]);
 
 
        include template("api","myCaseList");
     }
-
     public function initParams(){
         $params = [
             'mm' => 'kecheng',
@@ -46,48 +44,70 @@ class myCaseList  extends api {
 
     //到达案例评审
     public function toCase_review(){
-        if (!$_GET[cs]) {
-            showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
-        }
-        $courseid = $_GET['cs'];
-        $params = $this->initParams();
-        $params['mw'] = ['mc_courseid' => $courseid];
-        $row = $this->curl->curl_action('api/index', $params);
-        $courseLecturer =$row['data'];
-        extract($row['data'][0]);
+       
+        $user_id = param::get_cookie("_userid");
+        $data['anlitijiao']['mcs_userid'] =  $user_id;
+            $data = [
+                'anlitijiao' => [
+                    'mcs_userid' =>$user_id
+                ]
+            ];
+         $return = $this->curl->curl_action('user-api/get-case-submit-list',$data);
+         $courseLecturer = $return['data'];
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","myCaseList");
     }
-    //chakan case_review
+    //进行评审
     public function case_review(){
-        if (!$_GET[cs]) {
+       if (!$_GET[case_id]) {
             showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
         }
-        $courseid = $_GET['cs'];
-        $params = $this->initParams();
-        $params['mw'] = ['mc_courseid' => $courseid];
-        $row = $this->curl->curl_action('api/index', $params);
-        $courseLecturer =$row['data'];
-        extract($row['data'][0]);
+         $data = [
+                'anlitijiao' => [
+                           'mcs_id'=>$_GET[case_id]
+                        ]
+            ];
+         $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
+         $courseLecturer = $return['data'];
+       
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_review");
     }
     //查看自己的案例
     public function case_see(){
-        if (!$_GET[cs]) {
+        if (!$_GET[case_id]) {
             showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
         }
-        $courseid = $_GET['cs'];
-        $params = $this->initParams();
-        $params['mw'] = ['mc_courseid' => $courseid];
-        $row = $this->curl->curl_action('api/index', $params);
-        $courseLecturer =$row['data'];
-        extract($row['data'][0]);
+
+         $data = [
+                'anlitijiao' => [
+                           'mcs_id'=>$_GET[case_id]
+                        ]
+            ];
+         $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
+         $courseLecturer = $return['data'];
+       
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_see");
+    }
+    // 提交反馈意见
+    public function addCaseAdvice($value='')
+    {
+         
+         $data = [
+                'anlitijiao' => [
+                           'mcs_id'=>$_POST['case_id'],
+                           'mcs_caseAdvice'=>trim($_POST['caseAdvice']),
+                        ]
+            ];
+         
+         $return = $this->curl->curl_action('user-api/add-case-submit-advice',$data);
+         showmessage('案例评审成功','index.php?m=api&c=myCaseList&cs=10513&a=toCase_review');
+       
+       
     }
 }
 

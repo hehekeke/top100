@@ -21,137 +21,72 @@ class caseSubmit  extends api{
         }
     }
 
-    // 按标题搜索
-    public function search(){
-        $keyword = addslashes($_POST['keyword']);
-
-        // 组织搜索语句
-        $params = $this->initParams();
-        $params['mw'] = "(mc_title like '%".$keyword."%' or mc_lecturerId like '%".$keyword."%')and mc_assignToTop100=1";
-        $start = $this->getPageStart();
-        $params['mo'] = $start;
-        $params['ml'] = $this->pageSize;
-
-        $row = $this->curl->curl_action('api/index', $params);
-        $data = json_encode($row['data']);
-        if (!$_GET['isAjax'] ) {
-            include template('api', 'think');
-        } else {
-            echo $data;
-        }
-    }
-
-    // 初始化查询参数
-    public function initParams(){
-        $params = [
-            'mm' => 'kecheng',
-            'mr' => [
-                'kechengjiaolian' => [
-                    'mm' => 'kechengjiaolian',
-                    'mr' => [
-                        'jiaolian' => [
-                            'mm' => 'jiaolian',
-                            'ms' => 'ml_id,ml_name,ml_description,thumbs,ml_company,ml_position'
-                        ]
-                    ]
-                ]
-            ],
-            'mo' => 'mc_courseid desc,mc_createdAt desc',
-
-        ];
-        return $params;
-    }
-
-    // 显示 ID 俺哥案例
-    public function show()
+    public function caseSubmitData()
     {
-        if (!$_GET[cs]) {
-            showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
+        $userid =  param::get_cookie('_userid');
+        $_POST['anlitijiao']['mcs_userid'] = $userid;
+        //这个是分享者的照片
+        $tmp_name =$_FILES['mcs_lecturerThumbs']['tmp_name'];  // 文件上传后得临时文件名
+        $name     =$_FILES['mcs_lecturerThumbs']['name'];     // 被上传文件的名称
+        $size     =$_FILES['mcs_lecturerThumbs']['size'];    //  被上传文件的大小
+        $type     =$_FILES['mcs_lecturerThumbs']['type'];   // 被上传文件的类型
+        $dir      = 'uploadfile/'.date("Y").'/'.date('md');
+        @chmod($dir,0777);//赋予权限
+        @is_dir($dir) or mkdir($dir,0777);
+        move_uploaded_file($_FILES['mcs_lecturerThumbs']['tmp_name'],$dir."/".$name);
+        $type = explode(".",$name);
+        $type = @$type[1];
+        $date   = date("YmdHis");
+        $rename = @rename($dir."/".$name,$dir."/".$date.".".$type);
+        if($rename)
+        {
+         $_POST['anlitijiao']['mcs_lecturerThumbs'] = $dir."/".$date.".".$type;
         }
-        $courseid = $_GET['cs'];
-        $params = $this->initParams();
-        $params['mw'] = ['mc_courseid' => $courseid];
-        $row = $this->curl->curl_action('api/index', $params);
-        extract($row['data'][0]);
-        // 右侧推荐案例
-        $position = $this->getPosition(['assignToTop100' => 1]);
-        $file = $this->getAttachUrl($file);
-        $speech = $this->getAttachUrl($speech);
-        include template("api", "showThink");
-    }
+        //公司  logo 照片 mcs_companyThumbs
 
-    // 按标签搜索课程
-    public function listCourses(){
-        if (!$_GET['t'] && !is_int($_GET['t']))showmessage('你访问的页面找不到');
-        $tagId = $_GET['t'];
-        $start = $this->getPageStart();
-        $response = $this->getCoursesByTag($tagId, $start, $this->pageSize);
-        $data = json_encode($response);
-        if (empty($_GET['isAjax']) || !$_GET['isAjax']) {
-            include template("api", "listThink");
-        } else {
-            echo $data;
+        $tmp_name =$_FILES['mcs_companyThumbs']['tmp_name'];  // 文件上传后得临时文件名
+        $name     =$_FILES['mcs_companyThumbs']['name'];     // 被上传文件的名称
+        $size     =$_FILES['mcs_companyThumbs']['size'];    //  被上传文件的大小
+        $type     =$_FILES['mcs_companyThumbs']['type'];   // 被上传文件的类型
+        $dir      = 'uploadfile/'.date("Y").'/'.date('md');
+        @chmod($dir,0777);//赋予权限
+        @is_dir($dir) or mkdir($dir,0777);
+        move_uploaded_file($_FILES['mcs_companyThumbs']['tmp_name'],$dir."/".$name);
+        $type = explode(".",$name);
+        $type = @$type[1];
+        $date   = date("YmdHis");
+        $rename = @rename($dir."/".$name,$dir."/".$date.".".$type);
+        if($rename)
+        {
+         $_POST['anlitijiao']['mcs_companyThumbs'] = $dir."/".$date.".".$type;
         }
-    }
 
-    // 获取分页 offset的值
-    public function getPageStart(){
-        return empty($_GET['page']) ? 0 : $_GET['page']*$this->pageSize;
+
+        $return = $this->curl->curl_action('user-api/case-submit', ['anlitijiao'=>$_POST['anlitijiao']]);
+       showmessage('案例提交成功','http://localhost/index.php?m=api&c=myCaseList');
     }
-    public function getCourseNum(){
-        $num = $this->countCourseNum('mc_assignToTop100=1');
-        echo $_GET['callback'].'('.json_encode($num).')';
-    }
-    public function getSalonNum(){
-        $num = $this->countCourseNum('mc_assignToSalon=1');
-        echo $_GET['callback'].'('.json_encode($num).')';
-    }
-    public function countCourseNum($where){
-        $params = [
-            'mm' => 'kecheng',
-            'ms' => 'count(mc_courseid) as num',
-            'mw' => $where,
-        ];
-        $row = $this->curl->curl_action('api/index', $params);
-        return $row;
-    }
-    // 通过标签获取课程
-    public function getCoursesByTag($tagId, $start=0, $limit=20){
-        $where = 'c.assignToTop100=1';
-        if ($tagId) {
-            $where .= ' AND tr.tagId = '.$tagId;
+    
+    //文件上传的方法
+    public  function Upload($uploaddir)
+    {
+        echo 111;
+        $tmp_name =$_FILES['file']['tmp_name'];  // 文件上传后得临时文件名
+        $name     =$_FILES['file']['name'];     // 被上传文件的名称
+        $size     =$_FILES['file']['size'];    //  被上传文件的大小
+        $type     =$_FILES['file']['type'];   // 被上传文件的类型
+        $dir      = $uploaddir.date("Ym");
+        @chmod($dir,0777);//赋予权限
+        @is_dir($dir) or mkdir($dir,0777);
+        //chmod($dir,0777);//赋予权限
+        move_uploaded_file($_FILES['file']['tmp_name'],$dir."/".$name);
+        $type = explode(".",$name);
+        $type = @$type[1];
+        $date   = date("YmdHis");
+        $rename = @rename($dir."/".$name,$dir."/".$date.".".$type);
+        if($rename)
+        {
+        return $dir."/".$date.".".$type;
         }
-        $getParams = [
-            'mm' => 'kecheng',
-            'ms' => 'c.praises,c.content,c.auditionvideo,c.title,c.courseid,c.desc,c.comments,c.hits',
-            'mw' => $where,
-            'mo' => $start,
-            "ml" => $limit
-        ];
-        $row = $this->curl->curl_action('api/search-course', $getParams);
-        // 循环获取结果中的教练
-        // ToDo 待优化
-        // if (!empty($row)) {
-        // 	$response = $row[data];
-        // 	foreach($response as &$v) {
-        // 		$request = [
-        // 			'mm' => "kechengjiaolian",
-        // 			"mw" => ["mcl_cid" => $v[courseid]],
-        // 			"mr" => [
-        // 				"jiangshi" => [
-        // 					"mm" => "jiangshi",
-        // 					"ms" => "ml_name,ml_penName,ml_position,ml_thumbs,ml_company"
-        // 				]
-        // 			],
-        // 			"mo" => "0",
-        // 			"ml" => "20"
-        // 		];
-        // 		$lecturers = $this->curl->curl_action(
-        // 				'api/indx', $request);
-        // 		// $v['courseLecturer'] = $lecturers[data];
-        // 	}
-        // }
-        return $row[data];
     }
 }
 ?>

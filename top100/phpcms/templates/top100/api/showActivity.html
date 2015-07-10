@@ -1,0 +1,132 @@
+{template "content", "header"}
+<div class="tl">
+	<div class="c tl-c">{$scheduling[title]}</div>
+</div>
+
+<div class="c v">
+	<div class="l v-l">
+		<div class="v-lc v-pos">
+			<span>您目前处于：</span>
+			<a href="__APP__">首页</a>
+			<span> > </span>
+			<a href="/index.php?m=api&c=activity">社区活动</a>
+			<span> > </span>
+			<b>{$scheduling[title]}</b>
+		</div>
+		<div class="v-lc v-stl">
+			{$scheduling[title]}
+		</div>
+		<div class="v-lc v-sa">
+			<div class="l v-sal">
+				<p>
+<!-- 					<i class="r">
+						剩余席位：
+						{if $scheduling[celling]}
+							{$scheduling[applicans]} / {$scheduling[celling]}
+						{/if}
+						（位）
+					</i> -->
+					<i class="r">
+						<img src="{$imgPath}v-sa.png" />
+						<span>分享</span>
+					</i>
+					活动价格：<b>{if $scheduling[price]}¥{$scheduling[price]}</b> / 位（会员免费）{else}免费</b>{/if}
+				</p>
+				<p>
+
+					活动日期：{date("Y年m月d日", $scheduling[startTime])}  {$scheduling[address]}
+				</p>
+			</div>
+			<a href="index.php?m=api&c=activity&a=signup&id={$_GET['id']}" class="r v-sa-bm"><span>报名<br />预约</span></a>
+			<div class="b"></div>
+		</div>
+		{loop $scheduling['courses'] $course}
+			<div class="v-lc v-info">
+			{loop $course['lecturer'] $lecturer}
+			
+				<h1 class="l">
+					<div class="l">
+						<img src="{$lecturer[thumbs]}" />
+						
+					</div>
+
+					<div class="l activity-lecturerinfo">
+						<p>分享教练：{$lecturer[name]}</p>
+						{if $lecturer[company]}<p>任职公司：{$lecturer[company]} </p>{/if}
+						<p>
+							任职职位：{$lecturer[position]}
+						</p>
+					</div>
+				</h1>
+				<div class="c"></div>
+						<p style="text-indent: 2em;">{$lecturer[description]}</p>
+				<div class="b"></div>
+			{/loop}
+			</div>
+			<div class="v-lc v-con">
+				<h1>{$course['course']['title']} <small>({$course['startTime']} - {$course['endTime']})</small></h1>
+				<p>
+				分享概要：
+				<?php echo nl2br($course['course']['content']) ?>
+				</p>
+			</div>
+		{/loop}
+		<div class="b"></div>
+<!-- 		<div class="v-cmt">
+			<h1>全部评论(4)</h1>
+			<div class="v-cmt-c">
+				<img src="img/ava-test.jpg" class="l v-cmt-ava" />
+				<div class="r v-cmt-r">
+					<div class="l"><b>用户昵称</b><span>35天前：</span></div>
+					<div class="r"><a href="javascript:;">回复</a> | <a href="javascript:;">赞同</a><span>(99)</span></div>
+					<div class="b"></div>
+					<p>移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队</p>
+				</div>
+				<div class="b"></div>
+			</div>
+			<div class="v-cmt-c">
+				<img src="img/ava-test.jpg" class="l v-cmt-ava" />
+				<div class="r v-cmt-r">
+					<div class="l"><b>用户昵称</b><span>35天前：</span></div>
+					<div class="r"><a href="javascript:;">回复</a> | <a href="javascript:;">赞同</a><span>(99)</span></div>
+					<div class="b"></div>
+					<p>移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队</p>
+				</div>
+				<div class="b"></div>
+			</div>
+			<div class="v-cmt-c">
+				<img src="img/ava-test.jpg" class="l v-cmt-ava" />
+				<div class="r v-cmt-r">
+					<div class="l"><b>用户昵称</b><span>35天前：</span></div>
+					<div class="r"><a href="javascript:;">回复</a> | <a href="javascript:;">赞同</a><span>(99)</span></div>
+					<div class="b"></div>
+					<p>移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队</p>
+				</div>
+				<div class="b"></div>
+			</div>
+			<div class="v-cmt-c">
+				<img src="img/ava-test.jpg" class="l v-cmt-ava" />
+				<div class="r v-cmt-r">
+					<div class="l"><b>用户昵称</b><span>35天前：</span></div>
+					<div class="r"><a href="javascript:;">回复</a> | <a href="javascript:;">赞同</a><span>(99)</span></div>
+					<div class="b"></div>
+					<p>移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队移动互联网产品团队联网产品团队团队</p>
+				</div>
+				<div class="b"></div>
+			</div>
+			<form method="post" class="v-cmt-f">
+				<img src="img/ava-test.jpg" class="l v-cmt-ava" />
+				<textarea class="r"></textarea>
+				<div class="b"></div>
+				<button type="submit">提交</button>
+			</form>
+		</div> -->
+	</div>
+	{template "content", "right"}
+
+</div>
+<div class="b"></div>
+{template "content", "footer"}
+<script type="text/javascript">
+
+</script>

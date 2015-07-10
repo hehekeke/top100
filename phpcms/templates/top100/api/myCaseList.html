@@ -9,56 +9,54 @@
             <a href="index.php?m=api&c=myCaseList&cs=10513&a=toCase_review" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
 
         </div>
-
         {if $courseLecturer}
+          {loop $courseLecturer $v}
         <div class="v-lc v-info" style="border-bottom: 1px solid #d3d3d3">
-            {loop $courseLecturer $v}
+          
             {php $lecturer = $v[lecturer];$thumbs = json_decode($lecturer[thumbs], true);if(!$thumbs[0][thumbnailUrl]) $thumbs[0][thumbnailUrl]=$thumbs[0]['fileUrl']}
             <div class="lecturerInfo">
-                <h1>{$lecturer[title]}</h1>
+                <h1>{$v[courseTitle]}</h1>
                 <div class="l">
                     <?php if(!$thumbs[0][thumbnailUrl]){?>
-                    <img src="{$thumbs[0][fileUrl]}" />
+                    <img style="width:100px;height:100px;" src="{$v[lecturerThumbs]}" />
                     <?php }else {?>
-                    <img src="{$thumbs[0][thumbnailUrl]}" />
+                    <img style="width:100px;height:100px;" src="{$v[lecturerThumbs]}" />
                     <?php } ?>
                 </div>
                 <div class="l detailInfo">
                     <h1>
-                        <span>{$lecturer[name]}</span>
+                        <span>{$v[lecturerName]}</span>
                     </h1>
-                    <p>{$lecturer[company]} {$lecturer[position]}</p>
+                    <p>{$v[companyName]} {$v[lecturerPosition]}</p>
                 </div>
                 <div class="r v-top-r">
-                    <!--<div class="l v-top-rc">-->
-                        <!--<img src="{$imgPath}v-top1.png" />-->
-                        <!--<p>{viewed_num($created_at, $hits)}</p>-->
-                    <!--</div>-->
+                
                     <div class="l v-top-rc" style="width: 150px;">
-                        <img style="width: 131px;height: 50px;top: 890px;left: 862px;" src="{$imgPath}r2_c2.gif" />
+                        {if $v[caseStatus]=='0'}
+                             <img style="width: 131px;height: 50px;top: 890px;left: 862px;" src="{$imgPath}r2_c2.gif"/>
+                        {elseif $v[caseStatus]=='1'}
+                              <img style="width: 131px;height: 50px;top: 890px;left: 862px;" src="{$imgPath}r2_c3.gif"/>
+                         {elseif $v[caseStatus]=='2'}   
+                             <img style="width: 131px;height: 50px;top: 890px;left: 862px;" src="{$imgPath}r2_c4.gif"/>  
+                        {/if}
+                        
 
                     </div>
-                    <!--<a href="javascript:;" class="l v-top-rc">-->
-                        <!--<img src="{$imgPath}v-top3.png" />-->
-                        <!--<p>分享</p>-->
-                    <!--</a>-->
+                
                 </div>
             </div>
             <div class="c"></div>
             {if $_GET['a'] == 'toCase_review' }
-            <a href="/index.php?m=api&c=myCaseList&a=case_review&cs=10334">
-                <p class='desc' style="width: 738px;">{$lecturer[description]}</p>
+            <a href="/index.php?m=api&c=myCaseList&a=case_review&case_id={$v['id']}">
+                <p class='desc' style="width: 738px;">{$v[lecturerDescription]}</p>
             </a>
             {else}
-            <a href="/index.php?m=api&c=myCaseList&a=case_see&cs=10334">
-                <p class='desc' style="width: 738px;">{$lecturer[description]}</p>
+            <a href="/index.php?m=api&c=myCaseList&a=case_see&case_id={$v['id']}">
+                <p class='desc' style="width: 738px;">{$v[lecturerPosition]}</p>
             </a>
             {/if}
-
-
-
-            {/loop}
         </div>
+            {/loop}
         {/if}
 
 

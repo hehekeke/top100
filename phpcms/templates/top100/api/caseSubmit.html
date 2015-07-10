@@ -138,87 +138,119 @@
 	</div>
 </div>
 
-<div class="caseform-tl _pc"><div class="c">案例提交</div></div>
+<div class="caseform-tl _pc"><div class="c">案例编辑</div></div>
+<style type="text/css">
+	#share_name,#share_intruduction,#share_phone,#share_img,#share_img1{
+		width: 300px;
+	}
+	#share_name{
+		margin: 0 60px 0 0;
+	}
+	#share_intruduction{
+		margin-left: 45px;
+	}
+	.i{
+		width: 200px;
+	}
+	#ui-upload-input{ 
+		position:relative;top:20px;right:0px;height:100%;left: -100px;
+		cursor:pointer; opacity:0;
+		filter:alpha(opacity:0);
+		z-index:999;
+	}
+	#ui-upload-input1{ 
+		position:relative;top:20px;right:0px;height:100%;left: -100px;
+		cursor:pointer; opacity:0;
+		filter:alpha(opacity:0);
+		z-index:999;
+	}
+#ui-upload-txt,#ui-upload-txt1{
+	position:relative;
+	top:0px;left:0px;width:100%;height:100%;
+	line-height:35px;
+	text-align:center;
+	display: inline;
+	padding: 10px 18px;
+	width: 130px;
+	height: 40px;
+	background-color: #ffcd00;
+}
+</style>
 
-<form class="caseform-m" action="" method="post" enctype="multipart/form-data">
+
+<form class="caseform-m" action="/index.php?m=api&c=caseSubmit&a=caseSubmitData" method="post" enctype="multipart/form-data">
 <div class="c caseform _pc">
 	<table cellpadding="0" cellspacing="0">
 		<tr >
 			<td   class="td1">案例提案名称：</td>
-			<td><input id="case_name" /></td>
+			<td><input id="case_name" name="anlitijiao[mcs_courseTitle]" /></td>
 		</tr>
 		<tr>
-			<td class="td1">分享者姓名：</td>
-			<td><input id="share_name"/></td>
-
+			<td class="td1" >分享者介绍：</td>
+			<td class="i"><input id="share_name" name ="anlitijiao[mcs_lecturerDescription]"/>
+			</td>
+			
 		</tr>
-		<tr>
-            <td class="td1">分享者介绍：</td>
-            <td><input id="share_intruduction"/></td>
-		</tr>
-		<tr>
-			<td class="td1">手机号码：</td>
-			<td><input id="share_phone" /></td>
-		</tr>
-        <tr>
-            <td class="td1">Email：</td>
-            <td><input id="share_email" /></td>
-        </tr>
 		<tr>
 			<td class="td1">分享者照片：</td>
-			<td><input type="file" id="share_img" /></td>
+			<td>
+			
+				<input id='share_img' type="file" name="mcs_lecturerThumbs"/>
+			</td>
 		</tr>
 		<tr>
 			<td class="td1 tdt">案例方向：</td>
 			<td>
-				<label><input type="radio" style="height: 52px;" name="case_direction" checked="checked" value="1"/><img style="vertical-align:top"  src="{$imgPath}fangxiang1.gif"/>产品创新/用户体验（用户体验、产品设计、商业模式……）</label>
-				<label><input type="radio" name="case_direction"  value="2"/><img  src="{$imgPath}fangxiang2.gif"/>团队管理/组织发展（绩效管理、团队管理、敏捷转型……）</label>
-				<label><input type="radio" name="case_direction" value="3"/><img  src="{$imgPath}fangxiang3.gif"/>架构设计/技术战略（云计算、大数据、架构设计……）</label>
-				<label><input type="radio" name="case_direction" value="4"/><img  src="{$imgPath}fangxiang4.gif"/>开发管理/流程优化（开发语言/工具、流程、敏捷开发……）</label>
-				<label><input type="radio" name="case_direction" value="5"/><img  src="{$imgPath}fangxiang5.gif"/>测试管理/质量平台（质量体系、自动化测试、探索测试……）</label>
+				<label><input type="radio" style="height: 52px;" name="anlitijiao[mcs_courseTag]" checked="checked" value="1"/><img style="vertical-align:top"  src="{$imgPath}fangxiang1.gif"/>产品创新/用户体验（用户体验、产品设计、商业模式……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]"  value="2"/><img  src="{$imgPath}fangxiang2.gif"/>团队管理/组织发展（绩效管理、团队管理、敏捷转型……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="3"/><img  src="{$imgPath}fangxiang3.gif"/>架构设计/技术战略（云计算、大数据、架构设计……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="4"/><img  src="{$imgPath}fangxiang4.gif"/>开发管理/流程优化（开发语言/工具、流程、敏捷开发……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="5"/><img  src="{$imgPath}fangxiang5.gif"/>测试管理/质量平台（质量体系、自动化测试、探索测试……）</label>
 			</td>
 		</tr>
 	</table>
 </div>
-
+<script>
+	document.getElementById("ui-upload-input").onchange=function(){
+    document.getElementById("share_img").value = this.value;
+	}
+	document.getElementById("ui-upload-input1").onchange=function(){
+    document.getElementById("share_img1").value = this.value;
+	}
+</script>
 <div class="caseform-tl _pc"><div class="c">案例背景</div></div>
 
 <div class="c caseform _pc">
 	<table cellpadding="0" cellspacing="0">
 		<tr>
-			<td class="td1 td2">所在软件研发中心名称：</td>
-			<td><input id="team_name"/></td>
-		</tr>
-		<tr>
 			<td class="td1 td2">软件研发中心logo：</td>
-			<td><input type="file" id="team_logo"/></td>
+			<td>
+				<input  id='team_logo' type="file" name="mcs_companyThumbs"/>
+			</td>
 		</tr>
 		<tr>
 			<td class="td1 tdt td2">所在软件研发中心介绍：</td>
-			<td><textarea id="team_intruduction"></textarea></td>
+			<td><textarea id="team_intruduction" name="anlitijiao[mcs_courseDescription]"></textarea></td>
 		</tr>
-		<tr>
-			<td class="td1 td2">分享者在所属团队的职位：</td>
-			<td><input id="team_postion"/></td>
-		</tr>
+		
 		<tr>
 			<td class="td1 td2">所在研发团队规模：</td>
-			<td><input id="team_nums"/></td>
+			<td><input id="team_nums" name="anlitijiao[mcs_companySize]"/></td>
 		</tr>
 		<tr>
 			<td class="td1 td2">该研发团队职能定位：</td>
-			<td><input id="team_dingwei"/></td>
+			<td><input id="team_dingwei" name="anlitijiao[mcs_ccompanyPosition]"/></td>
 		</tr>
 		<tr>
 			<td class="td1 td2 tds" colspan="2">走进案例：您是否允许听众组团走进您的企业观摩学习：<label><input type="radio" name="x" checked="checked" value="1"/>Yes</label><label><input type="radio" name="x" value="0"/>No</label></td>
 		</tr>
 		<tr>
 			<td class="td1 tdt td2">案例简述：</td>
-			<td><textarea id="case_desc"></textarea></td>
+			<td><textarea id="case_desc" name="anlitijiao[mcs_courseThumbs]"></textarea></td>
 		</tr>
 		<tr>
 			<td class="td1 tdt td2">案例解读大纲  50分钟：</td>
-			<td><textarea id="case_50"></textarea></td>
+			<td><textarea id="case_50" name="anlitijiao[mcs_courseContent]"></textarea></td>
 		</tr>
 	</table>
 </div>

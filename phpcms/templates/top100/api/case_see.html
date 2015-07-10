@@ -1,11 +1,11 @@
 <title>TOP100SUMMIT全球软件案例智库 - {$title}
     {loop $courseLecturer $v}
-    - {$v[lecturer][name]}
+    - {$v[courseTitle]}
     {/loop}
 </title>
 {template "content", "header"}
 <div class="tl">
-    <div class="c tl-c">{$title}</div>
+    <div class="c tl-c">{$v[courseTitle]}</div>
 </div>
 
 <div class="c v">
@@ -14,13 +14,19 @@
             <span>您目前处于：</span>
             <a href="{APP_PATH}">首页</a>
             <span> > </span>
-            <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=11">智库</a>
+            <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=11">我的案例</a>
             <span> > </span>
-            <b>{$title}</b>
+            <b>{$v[courseTitle]}</b>
         </div>
         <div class="v-lc v-info">
             <span style="font-size: 35px;">当前案例状态:</span>
-            <img style="margin-left: 27px;width: 131px;height: 50px;margin-top: -12px;"  src="{$imgPath}r2_c2.gif"/>
+              {if $v[caseStatus]=='0'}
+                              <img style="margin-left: 27px;width: 131px;height: 50px;margin-top: -12px;"  src="{$imgPath}r2_c2.gif"/>
+                        {elseif $v[caseStatus]=='1'}
+                               <img style="margin-left: 27px;width: 131px;height: 50px;margin-top: -12px;"  src="{$imgPath}r2_c3.gif"/>
+                         {elseif $v[caseStatus]=='2'}   
+                              <img style="margin-left: 27px;width: 131px;height: 50px;margin-top: -12px;"  src="{$imgPath}r2_c4.gif"/> 
+                        {/if}
         </div>
         {if $courseLecturer}
         <div class="v-lc v-info">
@@ -29,78 +35,47 @@
             <div class="lecturerInfo">
                 <div class="l">
                     <?php if(!$thumbs[0][thumbnailUrl]){?>
-                    <img src="{$thumbs[0][fileUrl]}" />
+                    <img src="{$v[lecturerThumbs]}" />
                     <?php }else {?>
-                    <img src="{$thumbs[0][thumbnailUrl]}" />
+                    <img src="{v[lecturerThumbs]}" />
                     <?php } ?>
                 </div>
 
                 <div class="l detailInfo">
                     <h1>
-                        <span>{$lecturer[name]}</span>
+                        <span>{$v[lecturerName]}</span>
                     </h1>
-                    <p>{$lecturer[company]} {$lecturer[position]}</p>
+                    <p>{$v[companyName]} {$v[companyPosition]}</p>
                 </div>
 
             </div>
             <div class="c"></div>
-            <p class='desc'>{$lecturer[description]}</p>
+            <p class='desc'>{$v[lecturerDescription]}</p>
             {/loop}
         </div>
-        {/if}
-
-        {if $file}
-        <div class="v-lc v-link v-link-novideo">
-
-            <a href="{$file}" class="l v-link-btn v-link-btn1"><span>在线浏览<br />案例PPT</span></a>
-            <a href="{$file}" class="l v-link-btn v-link-btn2 v-link-btn-no"><span>在线阅读<br />教练文稿</span></a>
-            <div class="b"></div>
-        </div>
-        {/if}
+       
         <div class="v-lc v-con"  style="border: none">
-            {if $desc}
+            {if $v[companyDescription]}
             <h1>案例简述</h1>
             <div class="dagang">
                 <p>
-                    {nl2br($desc)}
+                    {nl2br($v[companyDescription])}
                 </p>
             </div>
             {/if}
-            <?php if ($character || $profit || $target || $trainees){ ?>
-            <h1>案例大纲</h1>
-            <h1>培训特色</h1>
-            <div class="dagang">
-                <p>{$character}</p>
-            </div>
-            {if $profit}
-            <h1>目标收益</h1>
-            <div class="dagang">
-                <p>{$profit}</p>
-            </div>
+            
+            {if $v[companyDescription]}
+                        <h1>案例大纲</h1>
+                        <div class="dagang">
+                            <p>
+                                {nl2br($v[companyDescription])}
+                            </p>
+                        </div>
+                        {/if}
+
+                    </div>
+                </div>
             {/if}
-            {if $target}
-            <h1>培训对象</h1>
-            <div class="dagang">
-                <p>{$target}</p>
-            </div>
-            {/if}
-            {if $trainees}
-            <h1>学员基础</h1>
-            <div class="dagang">
-                <p>{$trainees}</p>
-            </div>
-            {/if}
-            <?php
-
-				}else if ($content){
-					echo '<div class="dagang"><p>'.nl2br($content).'</p></div>';
-        }
-        ?>
-
-
-    </div>
-
-
 
 </div>
 
@@ -113,8 +88,6 @@
 
 <div class="c v">
     <div class="l v-l">
-
-
         {if $courseLecturer}
         <div class="v-lc v-info" style="padding: 0 0;margin-top: -9px;border-bottom:1px solid #000000">
             {loop $courseLecturer $v}
@@ -122,28 +95,29 @@
             <div class="lecturerInfo">
                 <div class="l">
                     <img  src="{$imgPath}r2_c4.gif" />
-                    <?php if(!$thumbs[0][thumbnailUrl]){?>
+                    <?php if(!$v[lecturerThumbs]){?>
 
                     <img src="{$thumbs[0][fileUrl]}" />
                     <?php }else {?>
 
-                    <img style="margin: 0 0;margin-left: -30px;height: 98px;" src="{$thumbs[0][thumbnailUrl]}" />
+                    <img style="margin: 0 0;margin-left: -30px;height: 98px;" src="{$v[lecturerThumbs]}" />
                     <?php } ?>
                 </div>
 
                 <div class="l detailInfo">
                     <h1>
-                        <span>{$lecturer[name]}</span>
+                        <span>{$v[name]}</span>
                     </h1>
-                    <p style="margin-left: 18px;">{$lecturer[company]} {$lecturer[position]}</p>
+                    <p style="margin-left: 18px;">{$v[company]} {$v[position]}</p>
                 </div>
 
             </div>
             <div class="c"></div>
 
-            {/loop}
+            
         </div>
-        <div style="margin-top: 31px;margin-bottom: 420px;"> 上帝啊是否iash发丝恢复多少分i阿双方iad是否i阿德斯房贷首付i阿双方i阿双方i大师傅地方还是</div>
+        <div style="margin-top: 31px;margin-bottom: 420px;"> {$v[caseAdvice]}</div>
+        {/loop}
         {/if}
 
 

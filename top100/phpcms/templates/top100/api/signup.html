@@ -1,0 +1,98 @@
+<title>TOP100SUMMIT全球软件案例智库 - {$scheduling['title']}</title>
+
+{template "content", "header"}
+
+<div class="tl">
+	<div class="c tl-c">{$scheduling['title']}</div>
+</div>
+
+<div class="c v">
+	<div class="v-right formright r ">
+		<img class="formlogo" src="{CSS_PATH}/top100/img/course.png">
+		<div class="coursesimgtitle">
+			<h5>{$scheduling['title']}</h5>
+			<p>时间：<?php echo date('Y-m-d H:i',$scheduling['startTime']);?>-<?php echo date('H:i',$scheduling['endTime']);?></p>
+			<p>地点：{$scheduling['address']}</p>
+		</div>
+		<div class="contain">
+			<h4>{$scheduling['title']}</h4>
+			
+			<div class="border line2" style="">
+				<p>剩余席位：（位）  </p>    
+				<p>活动价格： ￥/位<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（会员免费）</p>
+			</div>
+			<div class="line3">
+				<p>活动日期：<?php echo date('Y-m-d H:i',$scheduling['startTime']);?></p>
+				<p>{$scheduling['address']}</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="l v-l">
+		<div class="v-lc v-pos">
+			<span>您目前处于：</span>
+			<a href="{APP_PATH}">首页</a>
+			<span> > </span>
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=11">智库</a>
+			<span> > </span>
+			<b>{$scheduling['title']}</b>
+		</div>
+		<div id="form_content">
+			<h4>我有需求</h4>
+			<p>你的每一个课程需求我们都会竭尽全力：</p>
+			<div class="form_group">
+					<label><span class="color_ff5555">*</span>姓名</label>
+					<input type="text" id="map_name" name="map_name" value="" />
+			</div>
+			<div class="">
+					<div class="form_group floatleft">
+						<label><span class="color_ff5555">*</span>联系电话</label>
+						<input type="text" id="map_phone" name="map_phone" value="" />
+					</div>
+					<div class="form_group floatright">
+						<label><span class="color_ff5555">*</span>电子邮件地址</label>
+						<input type="text" id="map_email" name="map_email" value="" />
+					</div>
+					<div class="floatclear"></div>
+				</div>
+				<div class="">
+					<div class="form_group floatleft">
+						<label><span class="color_ff5555">*</span>公司名称</label>
+						<input type="text" id="map_company" name="map_company" value="" />
+					</div>
+					<div class="form_group floatright">
+						<label><span class="color_ff5555">*</span>职位</label>
+						<input type="text" id="map_position" name="map_position" value="" />
+					</div>
+					<div class="floatclear"></div>
+				</div>
+				<div class="form_group">
+					<label><span class="color_ff5555">*</span>公司地址</label>
+					<input type="text" id="map_companyAddress" name="map_companyAddress" value="" />
+				</div>
+				<hr/>
+				<h4>向教练介绍一下自己</h4>
+				<p class="color_ff5555">为教练提供尽可能多的信息将使他们更有可能讲解您想听到的内容：</p>
+				<p>
+					<ul>
+						<li>向教练介绍下您自己</li>
+						<li>您是为什么参加此课程？还有谁一起参加？</li>
+						<li>您关注这个课程的哪些地方？请说一说！</li>
+					</ul>
+				</p>
+				<p><textarea name="map_description" rows="6" cols="60"></textarea></p>
+			<div class="floatclear"></div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="b"></div>
+	
+	<div class="text-center">
+				<input class="form_submit" type="image" src="{CSS_PATH}/top100/img/submit.png">
+			</div>
+	
+</div>
+
+{template "content", "footer"}

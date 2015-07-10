@@ -1,6 +1,6 @@
 <?php 
 class curl{
-	public $baseUrl = 'http://mrm.msup.com.cn/admin.php/';
+	public $baseUrl = 'localhost:81/admin.php/';
 	public function curl_action($url, $params, $type = 'get'){
 		$url = $this->parseUrl($url, $params);
 		$ch = curl_init();
