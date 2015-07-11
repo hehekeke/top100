@@ -12,9 +12,6 @@
 
 <div class="caseform-tl _pc"><div class="c">案例编辑</div></div>
 <form class="caseform-m" action="/index.php?m=api&c=caseSubmit&a=caseSubmitData_update" method="post" enctype="multipart/form-data">
-<?php
-   var_dump($courseLecturer);
-?>
  {loop $courseLecturer $v}
 <div class="c caseform _pc">
 <input type="hidden" name='case_id' value="{$v[id]}" />

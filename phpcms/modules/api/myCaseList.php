@@ -51,7 +51,7 @@ class myCaseList  extends api {
                     'mcs_userid' =>$user_id
                 ]
             ];
-         $return = $this->curl->curl_action('user-api/get-case-submit-list',$data);
+         $return = $this->curl->curl_action('user-api/get-case-submit-review-list',$data);
          $courseLecturer = $return['data'];
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
@@ -69,9 +69,10 @@ class myCaseList  extends api {
                            'mcs_id'=>$_GET[case_id]
                     ]
             ];
-         $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
-         $courseLecturer = $return['data'];
+          
+         $return = $this->curl->curl_action('user-api/get-case-submit-review-detail-by-id',$data);
        
+         $courseLecturer = $return['data'];
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_review");
@@ -89,7 +90,9 @@ class myCaseList  extends api {
                             'mcs_userid' =>$user_id
                         ]
             ];
+           
          $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
+        
            // p($return);
          $courseLecturer = $return['data'];
      
