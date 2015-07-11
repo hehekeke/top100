@@ -6,16 +6,16 @@ class myCaseList  extends api {
     }
     public function init() {
         $user_id = param::get_cookie('_userid');
-        // $user_id = '1';
-        $data['anlitijiao']['mcs_userid'] =  $user_id;
-            $data = [
-                'anlitijiao' => [
-                    'mcs_userid' =>$user_id
-                ]
+            $data = [  
+                   'anlitijiao'=>[
+                        'mcs_userid'=>$user_id
+                   ]             
+                    
             ];
-         $return = $this->curl->curl_action('user-api/get-case-submit-list',$data);
+         $return = $this->curl->curl_action('user-api/get-case-submit-list', $data );
+         
          $courseLecturer = $return['data'];
-        
+       
         // 右侧推荐案例
         $position = $this->getPosition(['mc_assignToSalon' => 1]);
 
@@ -63,10 +63,12 @@ class myCaseList  extends api {
        if (!$_GET[case_id]) {
             showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
         }
+        $user_id = param::get_cookie("_userid");
          $data = [
                 'anlitijiao' => [
+                            'mcs_userid'=>$user_id,
                            'mcs_id'=>$_GET[case_id]
-                        ]
+                    ]
             ];
          $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
          $courseLecturer = $return['data'];
@@ -80,15 +82,18 @@ class myCaseList  extends api {
         if (!$_GET[case_id]) {
             showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
         }
+         $user_id = param::get_cookie("_userid");
 
          $data = [
                 'anlitijiao' => [
-                           'mcs_id'=>$_GET[case_id]
+                           'mcs_id'=>$_GET[case_id],
+                            'mcs_userid' =>$user_id
                         ]
             ];
          $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
+           // p($return);
          $courseLecturer = $return['data'];
-       
+     
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_see");
@@ -108,6 +113,26 @@ class myCaseList  extends api {
          showmessage('案例评审成功','index.php?m=api&c=myCaseList&cs=10513&a=toCase_review');
        
        
+    }
+
+    //到达编辑案例的页面
+    public function toUpdateCaseSubmit($value='')
+    {
+        if (!$_GET[case_id]) {
+            showmessage('错误的请求', '/index.php?m=content&c=index&a=lists&catid=11');
+        }
+        $user_id = param::get_cookie("_userid");
+         $data = [
+                'anlitijiao' => [
+                            'mcs_userid'=>$user_id,
+                           'mcs_id'=>$_GET[case_id]
+                    ]
+            ];
+         $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
+         $courseLecturer = $return['data'];
+         
+        // p($courseLecturer);
+          include template("api","case_update");
     }
 }
 

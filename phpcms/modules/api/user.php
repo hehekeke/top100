@@ -42,7 +42,6 @@ class user extends api{
 
 		$return = $this->curl->curl_action('user-api/login',   ['huiyuan'=>$_POST['huiyuan']]);
 		if($return['errno']  == 0) {
-
 				$cookietime = SYS_TIME+114400;
 				param::set_cookie('_userid', $return['data']['userId'], $cookietime);
 				param::set_cookie('_username', $return['data']['_username'], $cookietime);

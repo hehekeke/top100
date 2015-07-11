@@ -9,6 +9,7 @@
             <a href="index.php?m=api&c=myCaseList&cs=10513&a=toCase_review" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
 
         </div>
+       
         {if $courseLecturer}
           {loop $courseLecturer $v}
         <div class="v-lc v-info" style="border-bottom: 1px solid #d3d3d3">
@@ -25,9 +26,9 @@
                 </div>
                 <div class="l detailInfo">
                     <h1>
-                        <span>{$v[lecturerName]}</span>
+                        <span>{$v[name]}</span>
                     </h1>
-                    <p>{$v[companyName]} {$v[lecturerPosition]}</p>
+                    <p>{$v[company]} {$v[position]}</p>
                 </div>
                 <div class="r v-top-r">
                 
@@ -52,7 +53,7 @@
             </a>
             {else}
             <a href="/index.php?m=api&c=myCaseList&a=case_see&case_id={$v['id']}">
-                <p class='desc' style="width: 738px;">{$v[lecturerPosition]}</p>
+                <p class='desc' style="width: 738px;">{$v[lecturerDescription]}</p>
             </a>
             {/if}
         </div>

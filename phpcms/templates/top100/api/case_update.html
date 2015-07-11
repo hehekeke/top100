@@ -1,0 +1,106 @@
+<title>TOP100SUMMIT全球软件案例智库-案例提交</title>
+
+{template "content", "header"}
+<script language="JavaScript" src="/statics/css/top100/js/caseSubmit_validate.js"></script>
+<div class="bn banner-caseSubmit">
+	<!-- <div class="bn-c">
+		<h1>案例提交</h1>
+		<p class="bn-cs">北京2015年4月10日</p>
+	</div> -->
+</div>
+
+
+<div class="caseform-tl _pc"><div class="c">案例编辑</div></div>
+<form class="caseform-m" action="/index.php?m=api&c=caseSubmit&a=caseSubmitData_update" method="post" enctype="multipart/form-data">
+<?php
+   var_dump($courseLecturer);
+?>
+ {loop $courseLecturer $v}
+<div class="c caseform _pc">
+<input type="hidden" name='case_id' value="{$v[id]}" />
+	<table cellpadding="0" cellspacing="0">
+		<tr >
+			<td   class="td1">案例提案名称：</td>
+			<td><input id="case_name" name="anlitijiao[mcs_courseTitle]" value="{$v[courseTitle]}" /></td>
+		</tr>
+		<tr>
+			<td class="td1" >分享者介绍：</td>
+			<td class="i"><input id="share_name" name ="anlitijiao[mcs_lecturerDescription]" value="{$v[lecturerDescription]}"/>
+			</td>
+			
+		</tr>
+		<tr>
+			<td class="td1">分享者照片：</td>
+			<td>
+			
+				<input id='share_img' type="file" name="mcs_lecturerThumbs"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="td1 tdt">案例方向：</td>
+			<td>
+				<label><input type="radio" style="height: 52px;" name="anlitijiao[mcs_courseTag]" checked="checked" value="1"/><img style="vertical-align:top"  src="{$imgPath}fangxiang1.gif"/>产品创新/用户体验（用户体验、产品设计、商业模式……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]"  value="2"/><img  src="{$imgPath}fangxiang2.gif"/>团队管理/组织发展（绩效管理、团队管理、敏捷转型……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="3"/><img  src="{$imgPath}fangxiang3.gif"/>架构设计/技术战略（云计算、大数据、架构设计……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="4"/><img  src="{$imgPath}fangxiang4.gif"/>开发管理/流程优化（开发语言/工具、流程、敏捷开发……）</label>
+				<label><input type="radio" name="anlitijiao[mcs_courseTag]" value="5"/><img  src="{$imgPath}fangxiang5.gif"/>测试管理/质量平台（质量体系、自动化测试、探索测试……）</label>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="caseform-tl _pc"><div class="c">案例背景</div></div>
+
+<div class="c caseform _pc">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="td1 td2">软件研发中心logo：</td>
+			<td>
+				<input  id='team_logo' type="file" name="mcs_companyThumbs"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="td1 tdt td2">所在软件研发中心介绍：</td>
+			<td><textarea id="team_intruduction"   name="anlitijiao[mcs_companyDescription]}">{$v[companyDescription]}</textarea></td>
+		</tr>
+		
+		<tr>
+			<td class="td1 td2">所在研发团队规模：</td>
+			<td><input id="team_nums" name="anlitijiao[mcs_companySize]" value="{$v[companySize]}"/></td>
+		</tr>
+		<tr>
+			<td class="td1 td2">该研发团队职能定位：</td>
+			<td><input id="team_dingwei" value="{$v[companyPosition]}" name="anlitijiao[mcs_ccompanyPosition]"/></td>
+		</tr>
+		<tr>
+			<td class="td1 td2 tds" colspan="2">走进案例：您是否允许听众组团走进您的企业观摩学习：<label><input type="radio" name="x" checked="checked" value="1"/>Yes</label><label><input type="radio" name="x" value="0"/>No</label></td>
+		</tr>
+		<tr>
+			<td class="td1 tdt td2">案例简述：</td>
+			<td><textarea id="case_desc"  name="anlitijiao[mcs_courseDescription]">{$v[courseDescription]}</textarea></td>
+		</tr>
+		<tr>
+			<td class="td1 tdt td2">案例解读大纲  50分钟：</td>
+			<td><textarea id="case_50" name="anlitijiao[mcs_courseContent]">{$v[courseContent]}</textarea></td>
+		</tr>
+	</table>
+</div>
+
+<div class="c caseform _pc">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="td1 tdt td3">提示：</td>
+			<td>找出案例背后哲理、方法论等。<br />１.案例目标：当初启动此案例时（或实施后）达到的目标。<br />２.成功（或教训）要点：成功经验总结，即哪些技术或其他地方做好了才促使项目成功。<br />３.案例ROI分析：可能的话，进行投入产出分析。<br />４.案例启示：提炼出该案例（或项目）的哲理、方法论。</td>
+		</tr>
+	</table>
+</div>
+
+<div class="caseform-dl _pc"><a href="javascript:;">Invitations_top100summit_V21</a></div>
+<button type="submit" id="subtn" class="caseform-btn _pc">提&emsp;交</button>
+</form>
+{/loop}
+
+
+
+
+{template "content", "footer"}
