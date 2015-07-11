@@ -9,12 +9,13 @@ class myCaseList  extends api {
             $data = [  
                    'anlitijiao'=>[
                         'mcs_userid'=>$user_id
-                   ]             
-                    
+                   ]                      
             ];
          $return = $this->curl->curl_action('user-api/get-case-submit-list', $data );
+         $retuen_isReview =  $this->curl->curl_action('user-api/user-is-reivew', $data );
+        
          $courseLecturer = $return['data'];
-       
+         $isReview = $retuen_isReview['data'];
         // 右侧推荐案例
         $position = $this->getPosition(['mc_assignToSalon' => 1]);
 
@@ -53,6 +54,9 @@ class myCaseList  extends api {
             ];
          $return = $this->curl->curl_action('user-api/get-case-submit-review-list',$data);
          $courseLecturer = $return['data'];
+          $retuen_isReview =  $this->curl->curl_action('user-api/user-is-reivew', $data );
+        
+         $isReview = $retuen_isReview['data'];
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","myCaseList");

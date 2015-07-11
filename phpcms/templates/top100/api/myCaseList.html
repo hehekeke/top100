@@ -6,8 +6,10 @@
     <div class="l v-l ls-l">
         <div class="ls-ltl">
             <a href="index.php?m=api&c=myCaseList&cs=10513" class="<?php  if ($_GET['a'] == 'init' || !$_GET['a']): ?> a<?php endif;?>">我的案例</a>
-            <a href="index.php?m=api&c=myCaseList&cs=10513&a=toCase_review" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
-
+           
+             {if $isReview == '1'}
+                    <a href="index.php?m=api&c=myCaseList&cs=10513&a=toCase_review" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
+             {/if}
         </div>
        
         {if $courseLecturer}
