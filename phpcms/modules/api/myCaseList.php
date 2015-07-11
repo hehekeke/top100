@@ -13,7 +13,6 @@ class myCaseList  extends api {
                     
             ];
          $return = $this->curl->curl_action('user-api/get-case-submit-list', $data );
-         
          $courseLecturer = $return['data'];
        
         // 右侧推荐案例
