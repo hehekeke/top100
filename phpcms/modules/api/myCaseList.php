@@ -107,7 +107,57 @@ class myCaseList  extends api {
          $courseLecturer = $return['data'];
           $retuen_isReview =  $this->curl->curl_action('user-api/user-is-reivew', $data ); 
          $isReview = $retuen_isReview['data'];
+        
+           $data = array();
+        $page = 2   ;// 每页显示的数据条数
+        $totalData = count($return['data']);
+        $totalPage = ceil($totalData/$page); //总分页数
+        $currentPage = (int)$_GET['currPage'];
+       
+        if(empty(($currentPage))){
+                  $currentPage = 1;
+        }
+        //截取url
+        $t = $_SERVER['REQUEST_URI'];
+        $urlSub = strpos($t,'currPage');
+        $url = substr($t,0,$urlSub+9); 
+        
+        //每页显示的第一个数据的数组下标
+        $data_start = ($currentPage - 1) * $page;
+        $count = $totalData;
+        //判断是否最后一页
+        if($currentPage == $totalPage){
+            $page = $totalData-(($currentPage-1)*$page);
+        }
+        for($i=0;$i<$page;$i++){
+
+            $data[$i] = $return['data'][$data_start++];
+         
+        }
+        //显示按钮
+        $html = array();
+        for($j=1;$j<=$totalPage;$j++){
+
+            if($_GET['currPage']==$j){
+                $html[$j]="<span>{$j}</span>";
+            }else{
+                $html[$j]="<a href='{$url}{$j}'>{$j}</a>";
+            }
+        }
+        if($_GET['currPage']!=1){
+            $prev=$_GET['currPage']-1;
+            array_unshift($html,"<a href='{$url}{$prev}'>« 上一页</a>");
+        }
+        if($_GET['currPage']!=$totalPage){
+            $next=$_GET['currPage']+1;
+            array_push($html,"<a href='{$url}{$next}'>下一页 »</a>");
+        }
+        // p($data);
+        $courseLecturer = $data;
+      
         // 右侧推荐案例
+
+
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","myCaseList");
     }
@@ -124,10 +174,11 @@ class myCaseList  extends api {
                     ]
             ];
           
-         $return = $this->curl->curl_action('user-api/get-case-submit-review-detail-by-id',$data);
+         $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
        
          $courseLecturer = $return['data'];
         // 右侧推荐案例
+         // p($courseLecturer);
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_review");
     }

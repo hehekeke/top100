@@ -13,7 +13,7 @@
             <span>您目前处于：</span>
             <a href="{APP_PATH}">首页</a>
             <span> > </span>
-            <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=11">我的案例</a>
+            <a href="{APP_PATH}index.php?m=api&c=myCaseList&currPage=1">我的案例</a>
             <span> > </span>
             <b>{$v[courseTitle]}</b>
         </div>
@@ -28,9 +28,7 @@
                         {/if}
         </div>
         {if $courseLecturer}
-        <?php
-           var_dump($courseLecturer);
-        ?>
+     
         <div class="v-lc v-info">
             {loop $courseLecturer $v}
             {php $lecturer = $v[lecturer];$thumbs = json_decode($lecturer[thumbs], true);if(!$thumbs[0][thumbnailUrl]) $thumbs[0][thumbnailUrl]=$thumbs[0]['fileUrl']}
