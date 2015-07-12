@@ -5,10 +5,10 @@
 <div class="c v ls">
     <div class="l v-l ls-l">
         <div class="ls-ltl">
-            <a href="index.php?m=api&c=myCaseList&cs=10513" class="<?php  if ($_GET['a'] == 'init' || !$_GET['a']): ?> a<?php endif;?>">我的案例</a>
+            <a href="index.php?m=api&c=myCaseList&currPage=1" class="<?php  if ($_GET['a'] == 'init' || !$_GET['a']): ?> a<?php endif;?>">我的案例</a>
            
              {if $isReview == '1'}
-                    <a href="index.php?m=api&c=myCaseList&cs=10513&a=toCase_review" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
+                    <a href="index.php?m=api&c=myCaseList&a=toCase_review&currPage=1" class="{if $_GET['a'] == 'toCase_review' } a{/if}">案例评审</a>
              {/if}
         </div>
        
@@ -63,21 +63,15 @@
         {/if}
 
 
-
-        <div class="pg" style="margin-top: 260px;">
+         <div class="pg" style="margin-top: 260px;">
             <div class="pg-c">
-                <a href="javascript:;"></a>
-                <span>1</span>
-                <a href="javascript:;">2</a>
-                <a href="javascript:;">3</a>
-                <a href="javascript:;">4</a>
-                <a href="javascript:;">5</a>
-                <a href="javascript:;">></a>
-                <b>
-                    <input value="1" /> / 25页
-                </b>
+                {loop $html $v}
+                    {$v}
+                {/loop}
             </div>
         </div>
+
+
 
 
     </div>

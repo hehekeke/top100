@@ -63,7 +63,7 @@ class caseSubmit  extends api{
 
 
         $return = $this->curl->curl_action('user-api/case-submit', ['anlitijiao'=>$_POST['anlitijiao']]);
-       showmessage('案例提交成功','http://localhost/index.php?m=api&c=myCaseList');
+       showmessage('案例提交成功','/index.php?m=api&c=myCaseList&currPage=1');
     }
     public function caseSubmitData_update(){
         $case_id = $_POST['case_id'];

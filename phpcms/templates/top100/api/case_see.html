@@ -7,7 +7,6 @@
 <div class="tl">
     <div class="c tl-c">{$v[courseTitle]}</div>
 </div>
-
 <div class="c v">
     <div class="l v-l">
         <div class="v-lc v-pos">
@@ -29,6 +28,9 @@
                         {/if}
         </div>
         {if $courseLecturer}
+        <?php
+           var_dump($courseLecturer);
+        ?>
         <div class="v-lc v-info">
             {loop $courseLecturer $v}
             {php $lecturer = $v[lecturer];$thumbs = json_decode($lecturer[thumbs], true);if(!$thumbs[0][thumbnailUrl]) $thumbs[0][thumbnailUrl]=$thumbs[0]['fileUrl']}
@@ -43,9 +45,9 @@
 
                 <div class="l detailInfo">
                     <h1>
-                        <span>{$v[lecturerName]}</span>
+                        <span>{$v[name]}</span>
                     </h1>
-                    <p>{$v[companyName]} {$v[companyPosition]}</p>
+                    <p>{$v[company]} {$v[companyPosition]}</p>
                 </div>
 
             </div>
@@ -55,20 +57,20 @@
         </div>
        
         <div class="v-lc v-con"  style="border: none">
-            {if $v[companyDescription]}
+            {if $v[courseDescription]}
             <h1>案例简述</h1>
             <div class="dagang">
                 <p>
-                    {nl2br($v[companyDescription])}
+                    {nl2br($v[courseDescription])}
                 </p>
             </div>
             {/if}
             
-            {if $v[companyDescription]}
+            {if $v[courseContent]}
                         <h1>案例大纲</h1>
                         <div class="dagang">
                             <p>
-                                {nl2br($v[companyDescription])}
+                                {nl2br($v[courseContent])}
                             </p>
                         </div>
                         {/if}
