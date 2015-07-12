@@ -176,9 +176,8 @@ class myCaseList  extends api {
           
          $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
        
-         $courseLecturer = $return['data'];
+         $courseLecturer = $return['data']['caseSumbit'];
         // 右侧推荐案例
-         // p($courseLecturer);
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_review");
     }
@@ -197,10 +196,8 @@ class myCaseList  extends api {
             ];
            
          $return = $this->curl->curl_action('user-api/get-case-submit-detail-by-id',$data);
-        
          $courseLecturer = $return['data']['caseSumbit'];
         
-        // p($return['data']['advice']);
         // 右侧推荐案例
         $position = $this->getPosition(['assignToTop100' => 1]);
         include template("api","case_see");
@@ -208,16 +205,19 @@ class myCaseList  extends api {
     // 提交反馈意见
     public function addCaseAdvice($value='')
     {
-         
+        $user_id= param::get_cookie("_userid");
+        $review_time = time();
          $data = [
-                'anlitijiao' => [
-                           'mcs_id'=>$_POST['case_id'],
-                           'mcs_caseAdvice'=>trim($_POST['caseAdvice']),
-                        ]
-            ];
-         
+            'shenpiyijian' => [
+                        'myj_content'=>trim($_POST['caseAdvice']),
+                        'myj_case_id'=>$_POST['case_id'],
+                        'myj_user_id'=>$user_id,
+                        'myj_advice_date'=>$review_time
+                    ]
+        ];
+      
          $return = $this->curl->curl_action('user-api/add-case-submit-advice',$data);
-         showmessage('案例评审成功','index.php?m=api&c=myCaseList&cs=10513&a=toCase_review');
+         showmessage('案例评审成功','index.php?m=api&c=myCaseList&a=toCase_review&currPage=1');
        
        
     }

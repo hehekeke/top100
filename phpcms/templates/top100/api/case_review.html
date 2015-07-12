@@ -14,7 +14,7 @@
             <span>您目前处于：</span>
             <a href="{APP_PATH}">首页</a>
             <span> > </span>
-            <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=11">我的案例</a>
+            <a href="{APP_PATH}/index.php?m=api&c=myCaseList&a=toCase_review&currPage=1">案例评审</a>
             <span> > </span>
             <b>{$v[courseTitle]}</b>
         </div>
@@ -116,7 +116,7 @@
       <form method="post" action="/index.php?m=api&c=myCaseList&a=addCaseAdvice">
         <input type="hidden" name='case_id' value="{$v[id]}" />
             <div>
-                <textarea name='caseAdvice' style="width: 928px;height: 323px;margin-top: 33px;font-size: 20px;">     案例意见</textarea>
+                <textarea name='caseAdvice' style="width: 928px;height: 323px;margin-top: 33px;font-size: 20px;"> 案例意见</textarea>
             </div>
            
             <button type="submit" id="subtn" class="caseform-btn _pc">提交反馈意见</button>
